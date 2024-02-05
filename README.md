@@ -1,2 +1,1 @@
-# INFT2202Labs
- 
+# INFT2202 Lab 1 winter 2024
