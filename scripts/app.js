@@ -109,3 +109,58 @@ class User {
         this.password = password;
     }
 }
+
+
+// Function to validate email format
+function validateEmail(email) {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
+$(document).ready(function() {
+    // Initialize error message div
+    $("#ErrorMessage").hide();
+
+    // Event listener for register button click
+    $("#registerBtn").click(function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get form values
+        let firstName = $("#inputFirstName").val();
+        let lastName = $("#inputLastName").val();
+        let email = $("#inputEmail").val();
+        let password1 = $("#inputPassword1").val();
+        let password2 = $("#inputPassword2").val();
+
+        // Clear previous error messages
+        $("#ErrorMessage").empty().hide();
+
+        // Validate first name and last name length
+        if (firstName.length < 2 || lastName.length < 2) {
+            $("#ErrorMessage").text("First name and last name must be at least 2 characters long.").show();
+            return; // Stop further processing
+        }
+
+        // Validate email format
+        if (!validateEmail(email) || email.length < 8) {
+            $("#ErrorMessage").text("Please enter a valid email address.").show();
+            return; // Stop further processing
+        }
+
+        // Validate password length and match
+        if (password1.length < 6 || password1 !== password2) {
+            $("#ErrorMessage").text("Passwords must be at least 6 characters long and match.").show();
+            return; // Stop further processing
+        }
+
+        // All valid = create user instance and log in console
+        let newUser = new User(firstName, lastName, email, password1);
+        console.log(newUser);
+
+        // Clear form
+        $("form")[0].reset();
+    });
+
+
+});
+
