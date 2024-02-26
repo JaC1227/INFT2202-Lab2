@@ -96,3 +96,16 @@ function submitForm() {
         window.location.href = 'index.html';
     }, 3000);
 }
+
+
+// LAB 2
+
+// Define User class
+class User {
+    constructor(firstName, lastName, email, password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+    }
+}
