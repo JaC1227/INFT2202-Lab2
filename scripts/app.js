@@ -1,7 +1,7 @@
 /* 
     Jaedyn Chinn
     100909448
-    Date Completed: 2024/02/04
+    Date Completed: 2024/02/25
 */
 // body text for all pages
 document.getElementById('aboutUsHeader').innerText = 'About Us';
