@@ -78,7 +78,8 @@ document.body.appendChild(fixedBottomNavbar);
 
 
 // Contact form
-function submitForm() {
+function submitForm() 
+{
     // Get form values
     var name = document.getElementById('name').value;
     var contactNumber = document.getElementById('contactNumber').value;
@@ -92,7 +93,8 @@ function submitForm() {
     console.log('Short Message:', message);
 
     // Set a timer to redirect after 3 seconds
-    setTimeout(function() {
+    setTimeout(function() 
+    {
         window.location.href = 'index.html';
     }, 3000);
 }
@@ -101,8 +103,10 @@ function submitForm() {
 // LAB 2
 
 // Define User class
-class User {
-    constructor(firstName, lastName, email, password) {
+class User 
+{
+    constructor(firstName, lastName, email, password) 
+    {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -112,17 +116,20 @@ class User {
 
 
 // Function to validate email format
-function validateEmail(email) {
+function validateEmail(email) 
+{
     const re = /\S+@\S+\.\S+/;
     return re.test(email);
 }
 
-$(document).ready(function() {
+$(function() 
+{
     // Initialize error message div
     $("#ErrorMessage").hide();
 
     // Event listener for register button click
-    $("#registerBtn").click(function(event) {
+    $("#registerBtn").click(function(event) 
+    {
         event.preventDefault(); // Prevent default form submission
 
         // Get form values
@@ -161,6 +168,13 @@ $(document).ready(function() {
         $("form")[0].reset();
     });
 
+    // Event listener for login button click
+    $("#loginBtn").click(function() 
+    {
+        let username = $("#inputEmail").val(); 
+        let usernameText = '<span class="navbar-text mx-2">Welcome, ' + username + '</span>';
+        $("#contactLink").after(usernameText);
+    });
 
 });
 
